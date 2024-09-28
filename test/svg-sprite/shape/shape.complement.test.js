@@ -1,10 +1,10 @@
 'use strict';
 
 import { DimensionsCalculationError } from '../../../lib/svg-sprite/errors.mjs';
+import calculateSvgDimensions from '../../../lib/svg-sprite/utils/calculate-svg-dimensions.mjs';
 const { Buffer } = require('node:buffer');
 const File = require('vinyl');
 const SVGShape = require('../../../lib/svg-sprite/shape.js');
-const calculateSvgDimensions = require('../../../lib/svg-sprite/utils/calculate-svg-dimensions.js');
 
 const TEST_SPRITER = {
   config: {

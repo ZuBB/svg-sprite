@@ -1,12 +1,12 @@
 'use strict';
 
+import calculateSvgDimensions from '../lib/svg-sprite/utils/calculate-svg-dimensions.mjs';
 const { Buffer } = require('node:buffer');
 const path = require('node:path');
 const { DOMParser } = require('@xmldom/xmldom');
 const SVGSpriter = require('../lib/svg-sprite.js');
-const calculateSvgDimensions = require('../lib/svg-sprite/utils/calculate-svg-dimensions.js');
 
-jest.mock('../lib/svg-sprite/utils/calculate-svg-dimensions.js');
+jest.mock('../lib/svg-sprite/utils/calculate-svg-dimensions.mjs');
 
 const expectations = [{
   svg: '46x46.svg',
