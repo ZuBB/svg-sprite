@@ -1,10 +1,10 @@
 'use strict';
 
+import SVGSpriterConfig from '../../../lib/svg-sprite/config.mjs';
 const fs = require('node:fs');
 const path = require('node:path');
 const { Buffer } = require('node:buffer');
 const yaml = require('js-yaml');
-const SVGSpriterConfig = require('../../../lib/svg-sprite/config.js');
 
 jest.mock('node:fs');
 jest.mock('js-yaml');

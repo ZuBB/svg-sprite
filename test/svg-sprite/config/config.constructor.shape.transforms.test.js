@@ -1,6 +1,6 @@
 'use strict';
 
-const SVGSpriterConfig = require('../../../lib/svg-sprite/config.js');
+import SVGSpriterConfig from '../../../lib/svg-sprite/config.mjs';
 
 describe('testing SVGSpriterConfig shape.transforms', () => {
   const DEFAULT_TRANSFORMS = [['svgo', {}]];

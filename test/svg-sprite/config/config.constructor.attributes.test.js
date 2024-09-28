@@ -1,7 +1,7 @@
 'use strict';
 
+import SVGSpriterConfig from '../../../lib/svg-sprite/config.mjs';
 const path = require('node:path');
-const SVGSpriterConfig = require('../../../lib/svg-sprite/config.js');
 const { paths } = require('../../helpers/constants.js');
 
 describe('testing initial attributes', () => {
