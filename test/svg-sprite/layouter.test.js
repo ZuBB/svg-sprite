@@ -4,14 +4,14 @@ import { SVGSpriteLayouter } from '../../lib/svg-sprite/layouter.mjs';
 import CSSLayouter from '../../lib/svg-sprite/mode/css.mjs';
 import DefsLayouter from '../../lib/svg-sprite/mode/defs.mjs';
 import StackLayouter from '../../lib/svg-sprite/mode/stack.mjs';
+import SymbolLayouter from '../../lib/svg-sprite/mode/symbol.mjs';
 const SVGSpriter = require('../../lib/svg-sprite.js');
-const SymbolLayouter = require('../../lib/svg-sprite/mode/symbol.js');
 const ViewLayouter = require('../../lib/svg-sprite/mode/view.js');
 
 jest.mock('../../lib/svg-sprite/mode/css.mjs');
 jest.mock('../../lib/svg-sprite/mode/defs.mjs');
 jest.mock('../../lib/svg-sprite/mode/stack.mjs');
-jest.mock('../../lib/svg-sprite/mode/symbol.js');
+jest.mock('../../lib/svg-sprite/mode/symbol.mjs');
 jest.mock('../../lib/svg-sprite/mode/view.js');
 
 describe('testing layout()', () => {
