@@ -1,6 +1,6 @@
 'use strict';
 
-const SVGSpriteCssPacker = require('../../../lib/svg-sprite/mode/css/packer.js');
+import { SVGSpriteCssPacker } from '../../../lib/svg-sprite/mode/css/packer.mjs';
 
 describe('testing SVGSpriteCssPacker', () => {
   describe('testing constructor', () => {
