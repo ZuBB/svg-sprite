@@ -3,7 +3,6 @@
 /* eslint-disable unicorn/new-for-builtins, no-new-wrappers, prefer-regex-literals */
 
 const {
-  isFunction,
   isObject,
   isString,
   isPlainObject,
@@ -12,56 +11,6 @@ const {
 } = require('../lib/svg-sprite/utils/index.js');
 
 describe('utils', () => {
-  describe('isFunction', () => {
-    it('should return true for a class', () => {
-      expect(isFunction(class {})).toBe(true);
-    });
-
-    it('should return true for a function', () => {
-      expect(isFunction(() => {})).toBe(true);
-    });
-
-    it('should return true for an async function', () => {
-      expect(isFunction(async() => {})).toBe(true);
-    });
-
-    it('should return true for generator function', () => {
-      expect(isFunction(function * () {})).toBe(true);
-    });
-
-    it('should return false for a RegExp', () => {
-      expect(isFunction(/a/g)).toBe(false);
-    });
-
-    it('should return false for a null value', () => {
-      expect(isFunction(null)).toBe(false);
-    });
-
-    it('should return false for an undefined value', () => {
-      expect(isFunction(undefined)).toBe(false);
-    });
-
-    it('should return false for a plain object', () => {
-      expect(isFunction({})).toBe(false);
-    });
-
-    it('should return false for an array', () => {
-      expect(isFunction([1, 2, 3])).toBe(false);
-    });
-
-    it('should return false for a numeric value', () => {
-      expect(isFunction(123)).toBe(false);
-    });
-
-    it('should return false for a string', () => {
-      expect(isFunction('test')).toBe(false);
-    });
-
-    it('should return false for a boolean value', () => {
-      expect(isFunction(false)).toBe(false);
-    });
-  });
-
   describe('isObject', () => {
     it('should return true for an object', () => {
       expect(isObject({})).toBe(true);
