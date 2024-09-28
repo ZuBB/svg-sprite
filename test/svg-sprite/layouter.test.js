@@ -2,14 +2,14 @@
 
 import { SVGSpriteLayouter } from '../../lib/svg-sprite/layouter.mjs';
 import CSSLayouter from '../../lib/svg-sprite/mode/css.mjs';
+import DefsLayouter from '../../lib/svg-sprite/mode/defs.mjs';
 const SVGSpriter = require('../../lib/svg-sprite.js');
-const DefsLayouter = require('../../lib/svg-sprite/mode/defs.js');
 const StackLayouter = require('../../lib/svg-sprite/mode/stack.js');
 const SymbolLayouter = require('../../lib/svg-sprite/mode/symbol.js');
 const ViewLayouter = require('../../lib/svg-sprite/mode/view.js');
 
 jest.mock('../../lib/svg-sprite/mode/css.mjs');
-jest.mock('../../lib/svg-sprite/mode/defs.js');
+jest.mock('../../lib/svg-sprite/mode/defs.mjs');
 jest.mock('../../lib/svg-sprite/mode/stack.js');
 jest.mock('../../lib/svg-sprite/mode/symbol.js');
 jest.mock('../../lib/svg-sprite/mode/view.js');
