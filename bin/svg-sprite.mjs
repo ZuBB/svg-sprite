@@ -1,7 +1,5 @@
 #!/usr/bin/env node
 
-'use strict';
-
 /**
  * svg-sprite is a Node.js module for creating SVG sprites
  *
@@ -14,16 +12,17 @@
 /**
  * Module dependencies.
  */
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
+import { isObject, merge, zipObject } from 'lodash-es';
+import File from 'vinyl';
+import yaml from 'js-yaml';
+import glob from 'glob';
+import yargsFactory from 'yargs';
 import SVGSpriter from '../lib/svg-sprite.mjs';
-const fs = require('node:fs');
-const path = require('node:path');
-const { isObject, merge, zipObject } = require('lodash-es');
-const File = require('vinyl');
-const yaml = require('js-yaml');
-const glob = require('glob');
-let yargs = require('yargs');
 
-yargs
+let yargsInstance = yargsFactory()
   .usage('Create one or multiple sprites of the given SVG files, optionally along with some stylesheet resources.\nUsage: $0 [options] files')
   .version()
   .help('help', 'Display this help information')
@@ -33,6 +32,8 @@ yargs
   .example('$0 -cD out --cscss -p 10 assets/*.svg', 'Render Sass instead of CSS and add 10px padding around all shapes (no example document this time)')
   .showHelpOnFail(true)
   .demandCommand(1);
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 const config = {};
 let JSONConfig = { mode: {} };
@@ -51,21 +52,21 @@ function addOption(name, option) {
   if ('description' in option) {
     if ('alias' in option) {
       alias = option.alias;
-      yargs = yargs.alias(alias, name);
+      yargsInstance = yargsInstance.alias(alias, name);
     }
 
-    yargs = yargs.describe(alias, option.description);
+    yargsInstance = yargsInstance.describe(alias, option.description);
 
     if ('default' in option) {
       const template = name.endsWith('-template');
       const def = template ? path.resolve(path.dirname(__dirname), option.default) : option.default;
-      yargs = yargs.default(alias, def);
+      yargsInstance = yargsInstance.default(alias, def);
 
       if (option.default === true || option.default === false) {
-        yargs = yargs.boolean(name);
+        yargsInstance = yargsInstance.boolean(name);
       }
     } else if (option.required) {
-      yargs = yargs.require(alias);
+      yargsInstance = yargsInstance.require(alias);
     }
 
     if ('map' in option) {
@@ -135,7 +136,7 @@ try {
   console.log(error);
 }
 
-const { argv } = yargs;
+const { argv } = yargsInstance;
 
 // Map all arguments to a global configuration object
 for (const [key, value] of Object.entries(optionsMap)) {

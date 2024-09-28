@@ -15,9 +15,9 @@
   "engines": {
     "node": ">=18"
   },
-  "main": "lib/svg-sprite.js",
+  "main": "lib/svg-sprite.mjs",
   "bin": {
-    "svg-sprite": "./bin/svg-sprite.js"
+    "svg-sprite": "./bin/svg-sprite.mjs"
   },
   "files": [
     "bin",
