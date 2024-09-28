@@ -2,9 +2,9 @@
 
 /* eslint-disable no-new */
 
+import fixXMLString from '../lib/svg-sprite/utils/fix-xml-string.mjs';
 const { Buffer } = require('node:buffer');
 const File = require('vinyl');
-const fixXMLString = require('../../../lib/svg-sprite/utils/fix-xml-string.js');
 const SVGShape = require('../../../lib/svg-sprite/shape.js');
 
 const TEST_SPRITER = {
@@ -17,7 +17,7 @@ const TEST_SPRITER = {
   verbose: jest.fn()
 };
 
-jest.mock('../../../lib/svg-sprite/utils/fix-xml-string.js', () => jest.fn());
+jest.mock('../lib/svg-sprite/utils/fix-xml-string.mjs', () => jest.fn());
 
 describe('testing _initSVG()', () => {
   it('should call fixXMLString if passed svg is not normal', () => {

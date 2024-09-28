@@ -1,6 +1,7 @@
 'use strict';
 
 import { ArgumentError } from '../lib/svg-sprite/errors.mjs';
+import fixXMLString from '../lib/svg-sprite/utils/fix-xml-string.mjs';
 const { Buffer } = require('node:buffer');
 const path = require('node:path');
 const fs = require('node:fs');
@@ -8,9 +9,8 @@ const File = require('vinyl');
 const glob = require('glob');
 const getShape = require('../lib/svg-sprite/shape.js');
 const SVGSpriter = require('../lib/svg-sprite.js');
-const fixXMLString = require('../lib/svg-sprite/utils/fix-xml-string.js');
 
-jest.mock('../lib/svg-sprite/utils/fix-xml-string.js', () => jest.fn());
+jest.mock('../lib/svg-sprite/utils/fix-xml-string.mjs', () => jest.fn());
 
 const TEST_SVG = `<svg viewBox="0 0
                                 16 16"></svg>`;
