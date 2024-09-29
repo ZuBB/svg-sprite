@@ -16,8 +16,7 @@
  */
 const fs = require('node:fs');
 const path = require('node:path');
-const { isObject, zipObject } = require('lodash-es');
-const merge = require('lodash.merge');
+const { isObject, merge, zipObject } = require('lodash-es');
 const File = require('vinyl');
 const yaml = require('js-yaml');
 const glob = require('glob');
