@@ -3,8 +3,7 @@
 /* eslint-disable unicorn/new-for-builtins, no-new-wrappers, prefer-regex-literals */
 
 const {
-  isObject,
-  isPlainObject
+  isObject
 } = require('../lib/svg-sprite/utils/index.js');
 
 describe('utils', () => {
@@ -60,64 +59,6 @@ describe('utils', () => {
 
     it('should return false for a Symbol', () => {
       expect(isObject(Symbol('test'))).toBe(false);
-    });
-  });
-
-  describe('isPlainObject', () => {
-    it('should return true for an object', () => {
-      expect(isPlainObject({ a: 1 })).toBe(true);
-    });
-
-    it('should return false for a new String', () => {
-      expect(isPlainObject(new String(''))).toBe(false);
-    });
-
-    it('should return false for a new Regexp', () => {
-      expect(isPlainObject(new RegExp(''))).toBe(false);
-    });
-
-    it('should return false for a new Number', () => {
-      expect(isPlainObject(new Number(1))).toBe(false);
-    });
-
-    it('should return false for a new Boolean', () => {
-      expect(isPlainObject(new Boolean())).toBe(false);
-    });
-
-    it('should return false for a new Array', () => {
-      expect(isPlainObject(Array.from({ length: 1 }))).toBe(false);
-    });
-
-    it('should return false for an array', () => {
-      expect(isPlainObject([1, 2, 3])).toBe(false);
-    });
-
-    it('should return false for a Function constructor', () => {
-      expect(isPlainObject(Function)).toBe(false);
-    });
-
-    it('should return false for a null value', () => {
-      expect(isPlainObject(null)).toBe(false);
-    });
-
-    it('should return false for an undefined value', () => {
-      expect(isPlainObject(undefined)).toBe(false);
-    });
-
-    it('should return false for a string value', () => {
-      expect(isPlainObject('test')).toBe(false);
-    });
-
-    it('should return false for a boolean value', () => {
-      expect(isPlainObject(false)).toBe(false);
-    });
-
-    it('should return false for a function', () => {
-      expect(isPlainObject(() => {})).toBe(false);
-    });
-
-    it('should return false for a Symbol', () => {
-      expect(isPlainObject(Symbol('test'))).toBe(false);
     });
   });
 });
