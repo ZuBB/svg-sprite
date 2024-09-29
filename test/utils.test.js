@@ -5,8 +5,7 @@
 const {
   isObject,
   isPlainObject,
-  trimStart,
-  zipObject
+  trimStart
 } = require('../lib/svg-sprite/utils/index.js');
 
 describe('utils', () => {
@@ -148,27 +147,6 @@ describe('utils', () => {
       const string = '   a lovely string   ';
 
       expect(trimStart(string, '')).toBe(string);
-    });
-  });
-
-  describe('zipObject', () => {
-    it('should return the zipped object', () => {
-      expect(zipObject(['a', 'b'], [1, 2])).toStrictEqual({ a: 1, b: 2 });
-    });
-
-    it('should return the zipped object with unbalanced arrays', () => {
-      expect(zipObject(['a', 'b', 'c'], [1, 2])).toStrictEqual({ a: 1, b: 2, c: undefined });
-      expect(zipObject(['a'], [1, 2])).toStrictEqual({ a: 1 });
-    });
-
-    it('should not fail with empty arrays', () => {
-      expect(zipObject([], [])).toStrictEqual({});
-    });
-
-    it('should throw error if non-array value passed', () => {
-      expect(() => {
-        zipObject(1, false);
-      }).toThrow(new TypeError('Both parameters must be an array'));
     });
   });
 });

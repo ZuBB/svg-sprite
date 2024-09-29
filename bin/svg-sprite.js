@@ -16,13 +16,14 @@
  */
 const fs = require('node:fs');
 const path = require('node:path');
+const { zipObject } = require('lodash-es');
 const merge = require('lodash.merge');
 const File = require('vinyl');
 const yaml = require('js-yaml');
 const glob = require('glob');
 let yargs = require('yargs');
 const SVGSpriter = require('../lib/svg-sprite.js');
-const { isObject, zipObject } = require('../lib/svg-sprite/utils/index.js');
+const { isObject } = require('../lib/svg-sprite/utils/index.js');
 
 yargs
   .usage('Create one or multiple sprites of the given SVG files, optionally along with some stylesheet resources.\nUsage: $0 [options] files')
