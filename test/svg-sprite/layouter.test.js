@@ -1,7 +1,7 @@
 'use strict';
 
+import { SVGSpriteLayouter } from '../../lib/svg-sprite/layouter.mjs';
 const SVGSpriter = require('../../lib/svg-sprite.js');
-const SVGSpriteLayouter = require('../../lib/svg-sprite/layouter.js');
 const CSSLayouter = require('../../lib/svg-sprite/mode/css.js');
 const DefsLayouter = require('../../lib/svg-sprite/mode/defs.js');
 const StackLayouter = require('../../lib/svg-sprite/mode/stack.js');
