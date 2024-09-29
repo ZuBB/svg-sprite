@@ -3,7 +3,7 @@
 const fs = require('node:fs');
 const path = require('node:path');
 const File = require('vinyl');
-const { isObject } = require('../../lib/svg-sprite/utils/index.js');
+const { isObject } = require('lodash-es');
 
 /**
  * Recursively write files to disc
