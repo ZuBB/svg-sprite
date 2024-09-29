@@ -1,7 +1,5 @@
-'use strict';
-
-const svgo = require('svgo');
-const svgoTransform = require('../../../lib/svg-sprite/transform/svgo.js');
+import svgo from 'svgo';
+import svgoTransform from '../../../lib/svg-sprite/transform/svgo.mjs';
 
 const TEST_SVG = '<svg></svg>';
 
