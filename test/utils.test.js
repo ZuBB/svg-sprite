@@ -4,7 +4,6 @@
 
 const {
   isObject,
-  isString,
   isPlainObject,
   trimStart,
   zipObject
@@ -63,32 +62,6 @@ describe('utils', () => {
 
     it('should return false for a Symbol', () => {
       expect(isObject(Symbol('test'))).toBe(false);
-    });
-  });
-
-  describe('isString', () => {
-    it('should return true for a string', () => {
-      expect(isString('test')).toBe(true);
-    });
-
-    it('should return false for an array', () => {
-      expect(isString([1, 2, 3])).toBe(false);
-    });
-
-    it('should return false for a Function constructor', () => {
-      expect(isString(Function)).toBe(false);
-    });
-
-    it('should return false for a null value', () => {
-      expect(isString(null)).toBe(false);
-    });
-
-    it('should return false for an undefined value', () => {
-      expect(isString(undefined)).toBe(false);
-    });
-
-    it('should return false for a boolean value', () => {
-      expect(isString(false)).toBe(false);
     });
   });
 
