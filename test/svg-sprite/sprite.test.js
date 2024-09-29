@@ -1,8 +1,8 @@
 'use strict';
 
+import SVGSprite from '../../lib/svg-sprite/sprite.mjs';
 const { Buffer } = require('node:buffer');
 const File = require('vinyl');
-const SVGSprite = require('../../lib/svg-sprite/sprite.js');
 
 describe('testing SVGSprite', () => {
   describe('testing initial settings', () => {
