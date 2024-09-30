@@ -2,12 +2,12 @@
 
 /* eslint-disable new-cap */
 
+import SVGSpriteBase from '../../../lib/svg-sprite/mode/base.mjs';
 const path = require('node:path');
 const { Buffer } = require('node:buffer');
 const process = require('node:process');
 const mustache = require('mustache');
 const File = require('vinyl');
-const SVGSpriteBase = require('../../../lib/svg-sprite/mode/base.js');
 
 jest.mock('mustache');
 jest.mock('node:fs');
