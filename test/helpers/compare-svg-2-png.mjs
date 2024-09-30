@@ -1,9 +1,7 @@
-'use strict';
-
+import { mkdir } from 'node:fs/promises';
+import path from 'node:path';
 import convertSvg2Png from './convert-svg-2-png.mjs';
 import comparePng2Png from './compare-png-2-png.mjs';
-const { mkdir } = require('node:fs/promises');
-const path = require('node:path');
 
 /**
  * Rasterize an SVG file and compare it to an expected image
@@ -12,9 +10,9 @@ const path = require('node:path');
  * @param {string} png                PNG file path
  * @param {string} expected           Expected PNG file path
  */
-module.exports = async(svg, png, expected) => {
+export default async function compareSvgToPng(svg, png, expected) {
   await mkdir(path.dirname(png), { recursive: true });
   await convertSvg2Png(svg, png);
 
   return comparePng2Png(png, expected);
-};
+}

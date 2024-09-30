@@ -2,9 +2,9 @@
 
 import { launchBrowser, closeBrowser } from '../helpers/capture-browser.mjs';
 import compareHTML2Png from '../helpers/compare-html-2-png.mjs';
+import compareSvg2Png from '../helpers/compare-svg-2-png.mjs';
 const path = require('node:path');
 const { isObject } = require('lodash-es');
-const compareSvg2Png = require('../helpers/compare-svg-2-png.js');
 
 expect.extend({
   async toBeVisuallyEqualTo(receivedSVGPath, expectedPNGPath) {
