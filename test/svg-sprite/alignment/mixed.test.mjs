@@ -1,17 +1,17 @@
-'use strict';
-
+import path from 'node:path';
+import fs from 'node:fs';
+import { fileURLToPath } from 'node:url';
+import mustache from 'mustache';
+import * as sass from 'sass';
+import glob from 'glob';
 import SVGSpriter from '../../../lib/svg-sprite.mjs';
 import { addFixtureFiles } from '../../helpers/add-files.mjs';
-import { paths } from '../../helpers/constants.mjs';
 import writeFiles from '../../helpers/write-files.mjs';
 import writeFile from '../../helpers/write-file.mjs';
 import removeTmpPath from '../../helpers/remove-temp-path.mjs';
-const path = require('node:path');
-const fs = require('node:fs');
-const mustache = require('mustache');
-const sass = require('sass');
-const glob = require('glob');
+import { paths } from '../../helpers/constants.mjs';
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const cwdAlign = path.join(paths.fixtures, 'svg/css');
 const align = glob.sync('**/*.svg', { cwd: cwdAlign });
 const previewTemplate = fs.readFileSync(path.join(__dirname, '../../tmpl/css.html'), 'utf8');
