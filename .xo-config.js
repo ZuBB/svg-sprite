@@ -67,7 +67,9 @@ module.exports = {
     "unicorn/prefer-module": "off",
     "unicorn/prefer-reflect-apply": "off",
     "unicorn/prefer-string-slice": "off",
-    "unicorn/prevent-abbreviations": "off"
+    "unicorn/prevent-abbreviations": "off",
+
+    "import/newline-after-import": "off",
   },
   "overrides": [
     {
