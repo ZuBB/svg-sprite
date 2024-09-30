@@ -1,9 +1,9 @@
 'use strict';
 
+import SVGSpriter from './lib/svg-sprite.mjs';
 const path = require('node:path');
 const fs = require('node:fs');
 const glob = require('glob');
-const SVGSpriter = require('./lib/svg-sprite.js');
 
 const cwd = path.join(__dirname, 'test/fixture/svg/single');
 const dest = path.join(__dirname, 'tmp');

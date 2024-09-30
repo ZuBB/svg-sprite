@@ -1,11 +1,11 @@
 'use strict';
 
+import SVGSpriter from '../../../lib/svg-sprite.mjs';
 const path = require('node:path');
 const fs = require('node:fs');
 const mustache = require('mustache');
 const sass = require('sass');
 const glob = require('glob');
-const SVGSpriter = require('../../../lib/svg-sprite.js');
 const { addFixtureFiles } = require('../../helpers/add-files.js');
 const writeFiles = require('../../helpers/write-files.js');
 const writeFile = require('../../helpers/write-file.js');

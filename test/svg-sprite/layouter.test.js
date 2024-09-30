@@ -6,7 +6,7 @@ import DefsLayouter from '../../lib/svg-sprite/mode/defs.mjs';
 import StackLayouter from '../../lib/svg-sprite/mode/stack.mjs';
 import SymbolLayouter from '../../lib/svg-sprite/mode/symbol.mjs';
 import ViewLayouter from '../../lib/svg-sprite/mode/view.mjs';
-const SVGSpriter = require('../../lib/svg-sprite.js');
+import SVGSpriter from '../../lib/svg-sprite.mjs';
 
 jest.mock('../../lib/svg-sprite/mode/css.mjs');
 jest.mock('../../lib/svg-sprite/mode/defs.mjs');

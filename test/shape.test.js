@@ -1,10 +1,10 @@
 'use strict';
 
+import SVGSpriter from '../lib/svg-sprite.mjs';
 import calculateSvgDimensions from '../lib/svg-sprite/utils/calculate-svg-dimensions.mjs';
 const { Buffer } = require('node:buffer');
 const path = require('node:path');
 const { DOMParser } = require('@xmldom/xmldom');
-const SVGSpriter = require('../lib/svg-sprite.js');
 
 jest.mock('../lib/svg-sprite/utils/calculate-svg-dimensions.mjs');
 
