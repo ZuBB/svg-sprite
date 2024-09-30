@@ -1,9 +1,7 @@
-'use strict';
-
-const { mkdir, readFile, writeFile } = require('node:fs/promises');
-const path = require('node:path');
-const { PNG } = require('pngjs');
-const pixelmatch = require('pixelmatch');
+import { mkdir, readFile, writeFile } from 'node:fs/promises';
+import path from 'node:path';
+import { PNG } from 'pngjs';
+import pixelmatch from 'pixelmatch';
 
 const MAX_MISMATCH = 5;
 
@@ -21,7 +19,7 @@ const storeDiff = async(diff, filePath) => {
  * @param {string} expected                                                       expected png
  * @returns {Promise<{isEqual: boolean, matched: (number|*), diff: exports.PNG}>} matching results
  */
-module.exports = async(input, expected) => {
+export default async function comparePngToPng(input, expected) {
   const inputPng = PNG.sync.read(await readFile(input));
   const expectedPng = PNG.sync.read(await readFile(expected));
 
@@ -51,4 +49,4 @@ module.exports = async(input, expected) => {
   );
 
   return { isEqual: false, matched, diff };
-};
+}

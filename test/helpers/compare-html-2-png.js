@@ -2,7 +2,7 @@
 
 import { launchBrowser } from './capture-browser.mjs';
 import { browserDims } from './constants.mjs';
-const comparePng2Png = require('./compare-png-2-png.js');
+import comparePng2Png from './compare-png-2-png.mjs';
 
 /**
  * Capture a screenshot of a URL using browser

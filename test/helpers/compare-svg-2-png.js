@@ -1,9 +1,9 @@
 'use strict';
 
 import convertSvg2Png from './convert-svg-2-png.mjs';
+import comparePng2Png from './compare-png-2-png.mjs';
 const { mkdir } = require('node:fs/promises');
 const path = require('node:path');
-const comparePng2Png = require('./compare-png-2-png.js');
 
 /**
  * Rasterize an SVG file and compare it to an expected image
