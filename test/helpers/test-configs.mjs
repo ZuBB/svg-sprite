@@ -1,8 +1,6 @@
-'use strict';
-
+import path from 'node:path';
+import glob from 'glob';
 import { paths } from './constants.mjs';
-const path = require('node:path');
-const glob = require('glob');
 
 const cwdWeather = path.join(paths.fixtures, 'svg/single');
 const cwdWithoutDims = path.join(paths.fixtures, 'svg/special/without-dims');
@@ -25,5 +23,4 @@ const constants = {
 
 };
 
-module.exports = [constants.DEFAULT, constants.WITHOUT_DIMS];
-module.exports.constants = constants;
+export { constants };
