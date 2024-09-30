@@ -1,6 +1,6 @@
 'use strict';
 
-const { launchBrowser } = require('./capture-browser.js');
+import { launchBrowser } from './capture-browser.mjs';
 const comparePng2Png = require('./compare-png-2-png.js');
 const constants = require('./constants.js');
 

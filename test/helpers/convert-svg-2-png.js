@@ -1,6 +1,6 @@
 'use strict';
 
-const { launchBrowser } = require('./capture-browser.js');
+import { launchBrowser } from './capture-browser.mjs';
 
 /**
  * @param {string} svgPath             svg path

@@ -1,6 +1,4 @@
-'use strict';
-
-const { chromium } = require('playwright-chromium');
+import { chromium } from 'playwright-chromium';
 
 let browser;
 
@@ -28,4 +26,4 @@ const closeBrowser = async() => {
   await currentBrowserInstance.close();
 };
 
-module.exports = { launchBrowser, closeBrowser };
+export { launchBrowser, closeBrowser };

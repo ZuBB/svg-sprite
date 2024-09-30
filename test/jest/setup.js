@@ -1,10 +1,10 @@
 'use strict';
 
+import { launchBrowser, closeBrowser } from '../helpers/capture-browser.mjs';
 const path = require('node:path');
 const { isObject } = require('lodash-es');
 const compareSvg2Png = require('../helpers/compare-svg-2-png.js');
 const compareHTML2Png = require('../helpers/compare-html-2-png.js');
-const { launchBrowser, closeBrowser } = require('../helpers/capture-browser.js');
 
 expect.extend({
   async toBeVisuallyEqualTo(receivedSVGPath, expectedPNGPath) {
