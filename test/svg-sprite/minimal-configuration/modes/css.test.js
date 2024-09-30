@@ -6,12 +6,12 @@ import SVGSpriter from '../../../../lib/svg-sprite.mjs';
 import { addFixtureFiles } from '../../../helpers/add-files.mjs';
 import { less, stylus } from '../../../helpers/async-renderers.js';
 import { paths } from '../../../helpers/constants.mjs';
+import writeFiles from '../../../helpers/write-files.mjs';
 const path = require('node:path');
 const fs = require('node:fs');
 const mustache = require('mustache');
 const sass = require('sass');
 const { constants: testConfigs } = require('../../../helpers/test-configs.js');
-const writeFiles = require('../../../helpers/write-files.js');
 const removeTmpPath = require('../../../helpers/remove-temp-path.js');
 const writeFile = require('../../../helpers/write-file.js');
 

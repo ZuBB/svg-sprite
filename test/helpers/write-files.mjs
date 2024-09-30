@@ -1,9 +1,7 @@
-'use strict';
-
-const fs = require('node:fs');
-const path = require('node:path');
-const File = require('vinyl');
-const { isObject } = require('lodash-es');
+import fs from 'node:fs';
+import path from 'node:path';
+import File from 'vinyl';
+import { isObject } from 'lodash-es';
 
 /**
  * Recursively write files to disc
@@ -11,7 +9,7 @@ const { isObject } = require('lodash-es');
  * @param {object | Array} files      Files
  * @returns {number}                  Number of written files
  */
-module.exports = function writeFiles(files) {
+export default function writeFiles(files) {
   let written = 0;
   for (const file of Object.values(files)) {
     if (isObject(file) || Array.isArray(file)) {
@@ -26,4 +24,4 @@ module.exports = function writeFiles(files) {
   }
 
   return written;
-};
+}
