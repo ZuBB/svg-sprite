@@ -1,9 +1,9 @@
 'use strict';
 
 import SVGSpriter from '../../../lib/svg-sprite.mjs';
+import { addFixtureFiles, addRelativeFixtureFiles } from '../../helpers/add-files.mjs';
 const path = require('node:path');
 const glob = require('glob');
-const { addFixtureFiles, addRelativeFixtureFiles } = require('../../helpers/add-files.js');
 const { paths } = require('../../helpers/constants.js');
 
 const cwdWeather = path.join(paths.fixtures, 'svg/single');

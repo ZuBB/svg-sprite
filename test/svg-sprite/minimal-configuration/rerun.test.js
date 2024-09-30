@@ -1,9 +1,9 @@
 'use strict';
 
 import SVGSpriter from '../../../lib/svg-sprite.mjs';
+import { addFixtureFiles } from '../../helpers/add-files.mjs';
 const path = require('node:path');
 const glob = require('glob');
-const { addFixtureFiles } = require('../../helpers/add-files.js');
 const { paths } = require('../../helpers/constants.js');
 const removeTmpPath = require('../../helpers/remove-temp-path.js');
 

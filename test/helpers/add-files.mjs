@@ -1,7 +1,5 @@
-'use strict';
-
-const fs = require('node:fs');
-const path = require('node:path');
+import fs from 'node:fs';
+import path from 'node:path';
 
 /**
  * Add a bunch of SVG files
@@ -44,7 +42,7 @@ function addRelativeFixtureFiles(spriter, files, cwd) {
   addFixtureFilesBase(spriter, files, cwd, false);
 }
 
-module.exports = {
+export {
   addFixtureFiles,
   addRelativeFixtureFiles
 };

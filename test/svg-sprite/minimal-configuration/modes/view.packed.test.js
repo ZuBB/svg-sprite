@@ -1,12 +1,12 @@
 'use strict';
 
 import SVGSpriter from '../../../../lib/svg-sprite.mjs';
+import { addFixtureFiles } from '../../../helpers/add-files.mjs';
 const path = require('node:path');
 const { readFile } = require('node:fs/promises');
 const mustache = require('mustache');
 const writeFiles = require('../../../helpers/write-files.js');
 const writeFile = require('../../../helpers/write-file.js');
-const { addFixtureFiles } = require('../../../helpers/add-files.js');
 const { paths } = require('../../../helpers/constants.js');
 const removeTmpPath = require('../../../helpers/remove-temp-path.js');
 const { constants } = require('../../../helpers/test-configs.js');
