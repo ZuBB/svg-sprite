@@ -1,7 +1,5 @@
-'use strict';
-
-const { mkdir, writeFile } = require('node:fs/promises');
-const path = require('node:path');
+import { mkdir, writeFile } from 'node:fs/promises';
+import path from 'node:path';
 
 /**
  * Prepare and output a file and create directories as necessary
@@ -10,7 +8,7 @@ const path = require('node:path');
  * @param {string} content            Content
  * @returns {string}                  File
  */
-module.exports = async(file, content) => {
+export default async function writeFileWrapper(file, content) {
   try {
     await mkdir(path.dirname(file), { recursive: true });
     await writeFile(file, content);
@@ -18,4 +16,4 @@ module.exports = async(file, content) => {
   } catch {
     return null;
   }
-};
+}

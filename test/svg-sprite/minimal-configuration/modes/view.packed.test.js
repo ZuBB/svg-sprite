@@ -4,10 +4,10 @@ import SVGSpriter from '../../../../lib/svg-sprite.mjs';
 import { addFixtureFiles } from '../../../helpers/add-files.mjs';
 import { paths } from '../../../helpers/constants.mjs';
 import writeFiles from '../../../helpers/write-files.mjs';
+import writeFile from '../../../helpers/write-file.mjs';
 const path = require('node:path');
 const { readFile } = require('node:fs/promises');
 const mustache = require('mustache');
-const writeFile = require('../../../helpers/write-file.js');
 const removeTmpPath = require('../../../helpers/remove-temp-path.js');
 const { constants } = require('../../../helpers/test-configs.js');
 
