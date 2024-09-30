@@ -1,7 +1,7 @@
 'use strict';
 
+import { paths } from './constants.mjs';
 const { rm } = require('node:fs/promises');
-const { paths } = require('./constants.js');
 
 /**
  * Removing tempPath for tests

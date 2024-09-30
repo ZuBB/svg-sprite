@@ -2,9 +2,9 @@
 
 import SVGSpriter from '../../../lib/svg-sprite.mjs';
 import { addFixtureFiles, addRelativeFixtureFiles } from '../../helpers/add-files.mjs';
+import { paths } from '../../helpers/constants.mjs';
 const path = require('node:path');
 const glob = require('glob');
-const { paths } = require('../../helpers/constants.js');
 
 const cwdWeather = path.join(paths.fixtures, 'svg/single');
 const weather = glob.sync('**/weather*.svg', { cwd: cwdWeather });

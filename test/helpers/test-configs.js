@@ -1,8 +1,8 @@
 'use strict';
 
+import { paths } from './constants.mjs';
 const path = require('node:path');
 const glob = require('glob');
-const { paths } = require('./constants.js');
 
 const cwdWeather = path.join(paths.fixtures, 'svg/single');
 const cwdWithoutDims = path.join(paths.fixtures, 'svg/special/without-dims');

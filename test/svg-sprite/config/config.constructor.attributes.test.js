@@ -1,8 +1,8 @@
 'use strict';
 
 import SVGSpriterConfig from '../../../lib/svg-sprite/config.mjs';
+import { paths } from '../../helpers/constants.mjs';
 const path = require('node:path');
-const { paths } = require('../../helpers/constants.js');
 
 describe('testing initial attributes', () => {
   it('should set dest from config.dest', () => {

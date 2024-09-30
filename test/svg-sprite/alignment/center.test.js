@@ -3,6 +3,7 @@
 import SVGSpriter from '../../../lib/svg-sprite.mjs';
 import { addFixtureFiles } from '../../helpers/add-files.mjs';
 import { less } from '../../../helpers/async-renderers.js';
+import { paths } from '../../helpers/constants.mjs';
 const path = require('node:path');
 const fs = require('node:fs');
 const mustache = require('mustache');
@@ -11,7 +12,6 @@ const glob = require('glob');
 const writeFiles = require('../../helpers/write-files.js');
 const writeFile = require('../../helpers/write-file.js');
 const removeTmpPath = require('../../helpers/remove-temp-path.js');
-const { paths } = require('../../helpers/constants.js');
 
 const cwdAlign = path.join(paths.fixtures, 'svg/css');
 const align = glob.sync('**/*.svg', { cwd: cwdAlign });

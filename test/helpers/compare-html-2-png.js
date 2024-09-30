@@ -1,8 +1,8 @@
 'use strict';
 
 import { launchBrowser } from './capture-browser.mjs';
+import { browserDims } from './constants.mjs';
 const comparePng2Png = require('./compare-png-2-png.js');
-const constants = require('./constants.js');
 
 /**
  * Capture a screenshot of a URL using browser
@@ -17,7 +17,7 @@ module.exports = async(HTMLPath, expectedImagePath) => {
     const browser = await launchBrowser();
     const context = await browser.newContext();
     page = await context.newPage();
-    const { width, height } = constants.browser;
+    const { width, height } = browserDims;
     const previewImagePath = `${HTMLPath}.png`;
 
     await page.setViewportSize({ width, height });
