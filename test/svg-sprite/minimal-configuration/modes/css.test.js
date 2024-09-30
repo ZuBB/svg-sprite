@@ -9,11 +9,11 @@ import { paths } from '../../../helpers/constants.mjs';
 import writeFiles from '../../../helpers/write-files.mjs';
 import writeFile from '../../../helpers/write-file.mjs';
 import { constants as testConfigs } from '../../../helpers/test-configs.mjs';
+import removeTmpPath from '../../../helpers/remove-temp-path.mjs';
 const path = require('node:path');
 const fs = require('node:fs');
 const mustache = require('mustache');
 const sass = require('sass');
-const removeTmpPath = require('../../../helpers/remove-temp-path.js');
 
 const previewTemplate = fs.readFileSync(path.join(__dirname, '../../../tmpl/css.html'), 'utf8');
 

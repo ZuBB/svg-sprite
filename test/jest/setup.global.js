@@ -1,6 +1,6 @@
 'use strict';
 
-const removeTmpPath = require('../helpers/remove-temp-path.js');
+import removeTmpPath from '../helpers/remove-temp-path.mjs';
 
 module.exports = async() => {
   await removeTmpPath();

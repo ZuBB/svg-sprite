@@ -6,10 +6,10 @@ import { paths } from '../../../helpers/constants.mjs';
 import writeFiles from '../../../helpers/write-files.mjs';
 import writeFile from '../../../helpers/write-file.mjs';
 import { constants } from '../../../helpers/test-configs.mjs';
+import removeTmpPath from '../../../helpers/remove-temp-path.mjs';
 const path = require('node:path');
 const { readFile } = require('node:fs/promises');
 const mustache = require('mustache');
-const removeTmpPath = require('../../../helpers/remove-temp-path.js');
 
 describe.each`
         name          | testConfigKey

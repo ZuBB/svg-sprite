@@ -1,7 +1,5 @@
-'use strict';
-
+import { rm } from 'node:fs/promises';
 import { paths } from './constants.mjs';
-const { rm } = require('node:fs/promises');
 
 /**
  * Removing tempPath for tests
@@ -9,6 +7,7 @@ const { rm } = require('node:fs/promises');
  * @param {string} pathName path
  * @returns {Promise<void>}
  */
-module.exports = async(pathName = paths.tmp) => {
+
+export default async function removeTempPath(pathName = paths.tmp) {
   await rm(pathName, { force: true, recursive: true });
-};
+}

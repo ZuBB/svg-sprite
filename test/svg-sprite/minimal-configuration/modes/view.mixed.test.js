@@ -6,11 +6,11 @@ import { less } from '../../../helpers/async-renderers.js';
 import { paths } from '../../../helpers/constants.mjs';
 import writeFiles from '../../../helpers/write-files.mjs';
 import writeFile from '../../../helpers/write-file.mjs';
+import removeTmpPath from '../../../helpers/remove-temp-path.mjs';
 const path = require('node:path');
 const fs = require('node:fs');
 const mustache = require('mustache');
 const glob = require('glob');
-const removeTmpPath = require('../../../helpers/remove-temp-path.js');
 
 const tmpPath = path.join(paths.tmp, 'view.mixed');
 
