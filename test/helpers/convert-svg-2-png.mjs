@@ -1,12 +1,10 @@
-'use strict';
-
 import { launchBrowser } from './capture-browser.mjs';
 
 /**
  * @param {string} svgPath             svg path
  * @param {string} pngPath             png path
  */
-async function convertSvg2Png(svgPath, pngPath) {
+export default async function convertSvg2Png(svgPath, pngPath) {
   let page;
 
   try {
@@ -26,5 +24,3 @@ async function convertSvg2Png(svgPath, pngPath) {
     }
   }
 }
-
-module.exports = convertSvg2Png;
