@@ -1,5 +1,3 @@
-'use strict';
-
 import { launchBrowser } from './capture-browser.mjs';
 import { browserDims } from './constants.mjs';
 import comparePng2Png from './compare-png-2-png.mjs';
@@ -10,7 +8,7 @@ import comparePng2Png from './compare-png-2-png.mjs';
  * @param {string} HTMLPath                Input HTML file path
  * @param {string} expectedImagePath       Expected screenshot file
  */
-module.exports = async(HTMLPath, expectedImagePath) => {
+export default async function compareHtmlToPng(HTMLPath, expectedImagePath) {
   let page;
 
   try {
@@ -38,4 +36,4 @@ module.exports = async(HTMLPath, expectedImagePath) => {
       await page.close();
     }
   }
-};
+}
