@@ -2,6 +2,7 @@
 
 import SVGSpriter from '../../../lib/svg-sprite.mjs';
 import { addFixtureFiles } from '../../helpers/add-files.mjs';
+import { less } from '../../../helpers/async-renderers.js';
 const path = require('node:path');
 const fs = require('node:fs');
 const mustache = require('mustache');
@@ -10,7 +11,6 @@ const glob = require('glob');
 const writeFiles = require('../../helpers/write-files.js');
 const writeFile = require('../../helpers/write-file.js');
 const removeTmpPath = require('../../helpers/remove-temp-path.js');
-const asyncRenderers = require('../../helpers/async-renderers.js');
 const { paths } = require('../../helpers/constants.js');
 
 const cwdAlign = path.join(paths.fixtures, 'svg/css');
@@ -193,7 +193,7 @@ describe(`svg-sprite: with centered alignment and ${align.length} SVG files`, ()
 
       const lessFile = path.join(tmpPath, 'css/sprite.centered.less');
       const lessText = fs.readFileSync(lessFile, 'utf8');
-      const output = await asyncRenderers.less(lessText, {});
+      const output = await less(lessText, {});
 
       await writeFile(path.join(tmpPath, 'css/sprite.centered.less.css'), output.css);
 
