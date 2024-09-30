@@ -1,7 +1,7 @@
 'use strict';
 
+import { XmlFixingError } from '../lib/svg-sprite/errors.mjs';
 const fixXMLString = require('../lib/svg-sprite/utils/fix-xml-string.js');
-const XmlFixingError = require('../lib/svg-sprite/errors/xml-fixing-error.js');
 
 describe('testing fixing svg string', () => {
   it('should return valid svg file on svg with one multiline attribute values', () => {
