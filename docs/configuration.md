@@ -219,7 +219,7 @@ To use a custom callback for transforming a shape's SVG, pass a function with th
 }
 ```
 
-The transformation name (`"custom"` in this case) is of no significance. Please see `lib/svg-sprite/shape.js` to learn about what you can do with the shape object.
+The transformation name (`"custom"` in this case) is of no significance. Please see `lib/svg-sprite/shape.mjs` to learn about what you can do with the shape object.
 
 
 #### Miscellaneous shape options

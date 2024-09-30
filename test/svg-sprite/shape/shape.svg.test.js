@@ -1,9 +1,9 @@
 'use strict';
 
+import SVGShape from '../../../lib/svg-sprite/shape.mjs';
 const { Buffer } = require('node:buffer');
 const File = require('vinyl');
 const { XMLSerializer } = require('@xmldom/xmldom');
-const SVGShape = require('../../../lib/svg-sprite/shape.js');
 
 const TEST_SPRITER = {
   config: {

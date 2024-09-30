@@ -3,9 +3,9 @@
 /* eslint-disable no-new */
 
 import fixXMLString from '../lib/svg-sprite/utils/fix-xml-string.mjs';
+import SVGShape from '../../../lib/svg-sprite/shape.mjs';
 const { Buffer } = require('node:buffer');
 const File = require('vinyl');
-const SVGShape = require('../../../lib/svg-sprite/shape.js');
 
 const TEST_SPRITER = {
   config: {

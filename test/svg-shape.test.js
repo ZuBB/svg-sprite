@@ -2,12 +2,12 @@
 
 import { ArgumentError } from '../lib/svg-sprite/errors.mjs';
 import fixXMLString from '../lib/svg-sprite/utils/fix-xml-string.mjs';
+import getShape from '../lib/svg-sprite/shape.mjs';
 const { Buffer } = require('node:buffer');
 const path = require('node:path');
 const fs = require('node:fs');
 const File = require('vinyl');
 const glob = require('glob');
-const getShape = require('../lib/svg-sprite/shape.js');
 const SVGSpriter = require('../lib/svg-sprite.js');
 
 jest.mock('../lib/svg-sprite/utils/fix-xml-string.mjs', () => jest.fn());
