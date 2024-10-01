@@ -15,6 +15,7 @@
   "engines": {
     "node": ">=18"
   },
+  "type": "module",
   "main": "lib/svg-sprite.mjs",
   "bin": {
     "svg-sprite": "./bin/svg-sprite.mjs"
@@ -27,11 +28,11 @@
   "scripts": {
     "lint": "xo",
     "fix": "xo --fix",
-    "jest": "jest",
+    "jest": "node --experimental-vm-modules node_modules/.bin/jest",
     "example": "node example.js",
-    "test": "jest",
-    "test:coverage": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test": "npm run jest",
+    "test:coverage": "npm run jest --coverage",
+    "test:watch": "npm run jest --watch"
   },
   "dependencies": {
     "@resvg/resvg-js": "^2.6.0",
