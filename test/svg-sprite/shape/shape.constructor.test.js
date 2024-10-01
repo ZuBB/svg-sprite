@@ -2,10 +2,10 @@
 
 /* eslint-disable max-nested-callbacks */
 
+import SVGShape from '../../../lib/svg-sprite/shape.mjs';
 const path = require('node:path');
 const { Buffer } = require('node:buffer');
 const File = require('vinyl');
-const SVGShape = require('../../../lib/svg-sprite/shape.js');
 
 describe('testing Shape.constructor', () => {
   describe('testing constructor', () => {
@@ -290,4 +290,3 @@ describe('testing Shape.constructor', () => {
     });
   });
 });
-

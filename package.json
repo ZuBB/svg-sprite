@@ -15,9 +15,10 @@
   "engines": {
     "node": ">=18"
   },
-  "main": "lib/svg-sprite.js",
+  "type": "module",
+  "main": "lib/svg-sprite.mjs",
   "bin": {
-    "svg-sprite": "./bin/svg-sprite.js"
+    "svg-sprite": "./bin/svg-sprite.mjs"
   },
   "files": [
     "bin",
@@ -27,11 +28,11 @@
   "scripts": {
     "lint": "xo",
     "fix": "xo --fix",
-    "jest": "jest",
+    "jest": "node --experimental-vm-modules node_modules/.bin/jest",
     "example": "node example.js",
-    "test": "jest",
-    "test:coverage": "jest --coverage",
-    "test:watch": "jest --watch"
+    "test": "npm run jest",
+    "test:coverage": "npm run jest --coverage",
+    "test:watch": "npm run jest --watch"
   },
   "dependencies": {
     "@resvg/resvg-js": "^2.6.0",
@@ -43,8 +44,7 @@
     "glob": "^7.2.3",
     "import-lazy": "^4.0.0",
     "js-yaml": "^4.1.0",
-    "lodash.escape": "^4.0.1",
-    "lodash.merge": "^4.6.2",
+    "lodash-es": "^4.17.21",
     "mustache": "^4.2.0",
     "prettysize": "^2.0.0",
     "svgo": "^3.2.0",
@@ -87,98 +87,5 @@
     "retina",
     "mustache",
     "gulpfriendly"
-  ],
-  "xo": {
-    "space": true,
-    "plugins": [
-      "jsdoc"
-    ],
-    "extends": [
-      "plugin:jsdoc/recommended"
-    ],
-    "rules": {
-      "arrow-body-style": "off",
-      "capitalized-comments": "off",
-      "comma-dangle": [
-        "error",
-        "never"
-      ],
-      "eslint-comments/disable-enable-pair": "off",
-      "jsdoc/check-values": [
-        "error",
-        {
-          "allowedLicenses": [
-            "MIT https://github.com/svg-sprite/svg-sprite/blob/main/LICENSE"
-          ]
-        }
-      ],
-      "jsdoc/no-undefined-types": [
-        "error",
-        {
-          "definedTypes": [
-            "SVGSpriter",
-            "File",
-            "SVGShape",
-            "SVGSprite",
-            "playwright",
-            "HTMLElement"
-          ]
-        }
-      ],
-      "jsdoc/require-returns": "error",
-      "jsdoc/tag-lines": "off",
-      "logical-assignment-operators": "off",
-      "max-depth": [
-        "warn",
-        5
-      ],
-      "max-params": "off",
-      "no-bitwise": "off",
-      "object-curly-spacing": [
-        "error",
-        "always"
-      ],
-      "operator-linebreak": [
-        "error",
-        "after"
-      ],
-      "prefer-template": "error",
-      "space-before-function-paren": [
-        "error",
-        "never"
-      ],
-      "spaced-comment": "off",
-      "unicorn/explicit-length-check": "off",
-      "unicorn/no-array-method-this-argument": "off",
-      "unicorn/no-array-reduce": "off",
-      "unicorn/no-negated-condition": "off",
-      "unicorn/prefer-code-point": "off",
-      "unicorn/prefer-event-target": "off",
-      "unicorn/prefer-module": "off",
-      "unicorn/prefer-reflect-apply": "off",
-      "unicorn/prefer-string-slice": "off",
-      "unicorn/prevent-abbreviations": "off"
-    },
-    "overrides": [
-      {
-        "files": [
-          "test/**"
-        ],
-        "plugins": [
-          "jest",
-          "jest-formatting"
-        ],
-        "extends": [
-          "plugin:jest/recommended",
-          "plugin:jest-formatting/strict"
-        ],
-        "envs": [
-          "jest/globals"
-        ],
-        "rules": {
-          "jsdoc/require-returns": "off"
-        }
-      }
-    ]
-  }
+  ]
 }

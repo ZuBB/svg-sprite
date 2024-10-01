@@ -2,11 +2,11 @@
 
 /* eslint-disable max-nested-callbacks */
 
+import SVGSpriter from '../lib/svg-sprite.mjs';
 const fs = require('node:fs');
 const path = require('node:path');
 const { Buffer } = require('node:buffer');
 const File = require('vinyl');
-const SVGSpriter = require('../lib/svg-sprite.js');
 
 const TEST_SVG = 'fixture/svg/single/weather-clear.svg';
 const TEST_EMPTY_SVG = '<svg></svg>';

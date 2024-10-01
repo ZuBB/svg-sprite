@@ -1,6 +1,6 @@
 'use strict';
 
-const SVGSpriter = require('../../../lib/svg-sprite.js');
+import SVGSpriter from '../../../lib/svg-sprite.mjs';
 
 class TestError extends Error {}
 

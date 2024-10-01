@@ -1,12 +1,12 @@
 'use strict';
 
+import Shape from '../../lib/svg-sprite/shape.mjs';
 const { EventEmitter } = require('node:events');
 const path = require('node:path');
 const File = require('vinyl');
 const SVGSpriterQueue = require('../../lib/svg-sprite/queue.js');
-const Shape = require('../../lib/svg-sprite/shape.js');
 
-jest.mock('../../lib/svg-sprite/shape.js');
+jest.mock('../../lib/svg-sprite/shape.mjs');
 jest.mock('node:events');
 
 describe('testing Queue', () => {

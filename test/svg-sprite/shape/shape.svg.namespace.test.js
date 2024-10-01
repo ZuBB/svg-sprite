@@ -1,10 +1,10 @@
 'use strict';
 
+import { NotPermittedError } from '../../../lib/svg-sprite/errors.mjs';
+import SVGShape from '../../../lib/svg-sprite/shape.mjs';
 const { Buffer } = require('node:buffer');
 const xpath = require('xpath');
 const File = require('vinyl');
-const SVGShape = require('../../../lib/svg-sprite/shape.js');
-const NotPermittedError = require('../../../lib/svg-sprite/errors/not-permitted-error.js');
 
 const TEST_SPRITER = {
   config: {

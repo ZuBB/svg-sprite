@@ -1,7 +1,7 @@
 'use strict';
 
+import SVGSpriterConfig from '../../../lib/svg-sprite/config.mjs';
 const winston = require('winston');
-const SVGSpriterConfig = require('../../../lib/svg-sprite/config.js');
 
 describe('testing log', () => {
   const getLogger = () => {
@@ -103,4 +103,3 @@ describe('testing log', () => {
     });
   });
 });
-

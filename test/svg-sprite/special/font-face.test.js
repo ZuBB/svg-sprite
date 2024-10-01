@@ -1,8 +1,8 @@
 'use strict';
 
+import SVGSpriter from '../../../lib/svg-sprite.mjs';
+import { paths } from '../../helpers/constants.mjs';
 const path = require('node:path');
-const SVGSpriter = require('../../../lib/svg-sprite.js');
-const { paths } = require('../../helpers/constants.js');
 
 describe('testing font face preserving', () => {
   it('preserve font-face in sprite', async() => {

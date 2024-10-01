@@ -2,18 +2,18 @@
 
 /* eslint-disable max-nested-callbacks */
 
+import SVGSpriter from '../../../../lib/svg-sprite.mjs';
+import { addFixtureFiles } from '../../../helpers/add-files.mjs';
+import { less, stylus } from '../../../helpers/async-renderers.js';
+import { paths } from '../../../helpers/constants.mjs';
+import writeFiles from '../../../helpers/write-files.mjs';
+import writeFile from '../../../helpers/write-file.mjs';
+import { constants as testConfigs } from '../../../helpers/test-configs.mjs';
+import removeTmpPath from '../../../helpers/remove-temp-path.mjs';
 const path = require('node:path');
 const fs = require('node:fs');
 const mustache = require('mustache');
 const sass = require('sass');
-const { constants: testConfigs } = require('../../../helpers/test-configs.js');
-const SVGSpriter = require('../../../../lib/svg-sprite.js');
-const { addFixtureFiles } = require('../../../helpers/add-files.js');
-const writeFiles = require('../../../helpers/write-files.js');
-const removeTmpPath = require('../../../helpers/remove-temp-path.js');
-const { paths } = require('../../../helpers/constants.js');
-const writeFile = require('../../../helpers/write-file.js');
-const asyncRenderers = require('../../../helpers/async-renderers.js');
 
 const previewTemplate = fs.readFileSync(path.join(__dirname, '../../../tmpl/css.html'), 'utf8');
 
@@ -172,7 +172,7 @@ describe('testing minimal config', () => {
 
         const lessFile = path.join(tmpPath, `css/sprite${testConfig.namespace}.less`);
         const lessText = fs.readFileSync(lessFile, 'utf8');
-        const output = await asyncRenderers.less(lessText, {});
+        const output = await less(lessText, {});
 
         await writeFile(path.join(tmpPath, `css/sprite${testConfig.namespace}.less.css`), output.css);
 
@@ -191,7 +191,7 @@ describe('testing minimal config', () => {
 
         const stylusFile = path.join(tmpPath, `css/sprite${testConfig.namespace}.styl`);
         const stylusText = fs.readFileSync(stylusFile, 'utf8');
-        const output = await asyncRenderers.stylus(stylusText, {});
+        const output = await stylus(stylusText, {});
 
         await writeFile(path.join(tmpPath, `css/sprite${testConfig.namespace}.styl.css`), output);
 
