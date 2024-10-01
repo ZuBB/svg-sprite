@@ -40,8 +40,7 @@ const jestConfig = {
     'test/fix-xml-string.test.mjs',
     'test/shape.test.mjs',
     'test/spriter.test.mjs',
-    'test/svg-shape.test.mjs',
-    'test/svg-sprite/alignment/mixed.test.mjs'
+    'test/svg-shape.test.mjs'
   ],
   transform: {},
   setupFilesAfterEnv: ['<rootDir>/test/jest/setup.mjs'],
